@@ -1,0 +1,12 @@
+{
+  "movie1": {
+    "title": "Ghosted",
+    "director": "Dexter Fletcher",
+    "stars": ["Chris Evans", "Ana de Armas", "Adrien Brody"],
+    "releaseDate": "April 21, 2023",
+    "genre": "Action/Romance",
+    "rating": "PG-13",
+    "animated": false,
+    "audienceScore": "56%"
+  }
+}
