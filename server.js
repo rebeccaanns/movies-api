@@ -3,18 +3,22 @@ dotenv.config();
 
 const express = require('express');
 // const mongodb = require('./db/connect');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 const app = express();
 const port = process.env.port || 3000;
 
 app
+  .use(bodyParser.json())
   .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     next();
   })
-  .use('/', require('./routes'));
+  .use('/', require('./routes/app'));
 
 const db = require('./models');
+
 db.mongoose
   .connect(db.url, {
     useNewUrlParser: true,

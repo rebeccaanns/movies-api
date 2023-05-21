@@ -10,6 +10,12 @@ module.exports = (mongoose) => {
       },
       personalRating: {
         type: String
+      },
+      username: {
+        type: String
+      },
+      password: {
+        type: String
       }
     })
   );
