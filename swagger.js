@@ -5,7 +5,7 @@ const doc = {
     title: 'Movies API',
     description: 'Project 2 movies API for CSE341 at BYUI ',
   },
-  host: 'localhost:3000',
+  host: 'https://movies-api-oq8u.onrender.com',
   schemes: ['http', 'https'],
 };
 
