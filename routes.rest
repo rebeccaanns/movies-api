@@ -9,12 +9,34 @@ GET https://movies-api-oq8u.onrender.com/movies
 GET http://localhost:3000/movies/646cd27212bd8085f8c11f78
 
 ###
+GET https://movies-api-oq8u.onrender.com/movies/646cd27212bd8085f8c11f78
+
+###
 GET http://localhost:3000/movies/647131fd8e9a96486a93cab7
+
+###
+GET https://movies-api-oq8u.onrender.com/movies/647131fd8e9a96486a93cab7
 
 //POST
 ###
 POST http://localhost:3000/movies HTTP/1.1
 Content-Type: application/json
+
+{
+    "title": "Mamma Mia! Here We Go Again",
+    "director": ["Ol Parker"],
+    "stars": ["Lily James", "Amanda Seyfreid", "Meryl Streep"],
+    "releaseDate": "July 20, 2018",
+    "genre": "Musical/Comedy",
+    "rating": "PG-13",
+    "animated": false,
+    "audienceScore": "66%"
+}
+
+###
+POST https://movies-api-oq8u.onrender.com/movies HTTP/1.1
+Content-Type: application/json
+
 {
     "title": "Mamma Mia! Here We Go Again",
     "director": ["Ol Parker"],
@@ -28,23 +50,100 @@ Content-Type: application/json
 
 //PUT
 ###
-# PUT http://localhost:3000/movies HTTP/1.1
-# Content-Type: application/json
-# {
-#     "title": "Mamma Mia! Here We Go Again",
-#     "director": ["Ol Parker"],
-#     "stars": ["Lily James", "Amanda Seyfreid", "Meryl Streep", "Cher"],
-#     "releaseDate": "July 20, 2018",
-#     "genre": "Musical/Comedy",
-#     "rating": "PG-13",
-#     "animated": false,
-#     "audienceScore": "77%"
-# }
+PUT http://localhost:3000/movies/647271053f27498167f09e0e HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Mamma Mia! Here We Go Again",
+    "director": ["Ol Parker"],
+    "stars": ["Lily James", "Amanda Seyfreid", "Meryl Streep", "Cher"],
+    "releaseDate": "July 20, 2018",
+    "genre": "Musical/Comedy",
+    "rating": "PG-13",
+    "animated": false,
+    "audienceScore": "77%"
+}
+
+###
+PUT https://movies-api-oq8u.onrender.com/movies/647271053f27498167f09e0e HTTP/1.1
+Content-Type: application/json
+
+{
+    "title": "Mamma Mia! Here We Go Again",
+    "director": ["Ol Parker"],
+    "stars": ["Lily James", "Amanda Seyfreid", "Meryl Streep", "Cher"],
+    "releaseDate": "July 20, 2018",
+    "genre": "Musical/Comedy",
+    "rating": "PG-13",
+    "animated": false,
+    "audienceScore": "77%"
+}
+
+###
+DELETE https://movies-api-oq8u.onrender.com/movies/647271053f27498167f09e0e
 
 //get all ratings
 ###
-GET http://localhost:3000/userRatings
+GET http://localhost:3000/userRating
+
+###
+GET https://movies-api-oq8u.onrender.com/userRating
 
 //Single rating
 ###
-GET http://localhost:3000/userRatings/6472607f8e9a96486a93cab9
+GET http://localhost:3000/userRating/6472607f8e9a96486a93cab9
+
+###
+GET https://movies-api-oq8u.onrender.com/userRating/6472607f8e9a96486a93cab9
+
+###
+POST http://localhost:3000/userRating HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "kyle",
+    "password": "P@ssw0rd",
+    "seen": true,
+    "liked": true,
+    "personalRating": "75%"
+}
+
+###
+POST https://movies-api-oq8u.onrender.com/userRating HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "kyle",
+    "password": "P@ssw0rd",
+    "seen": true,
+    "liked": true,
+    "personalRating": "75%"
+}
+
+###
+PUT http://localhost:3000/userRating/6472607f8e9a96486a93cab9 HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "becca",
+    "password": "test12345",
+    "seen": true,
+    "liked": true,
+    "personalRating": "80%"
+}
+
+###
+PUT https://movies-api-oq8u.onrender.com/userRating/6472607f8e9a96486a93cab9 HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "becca",
+    "password": "test12345",
+    "seen": true,
+    "liked": true,
+    "personalRating": "80%"
+}
+
+###
+DELETE https://movies-api-oq8u.onrender.com/userRating/
+
