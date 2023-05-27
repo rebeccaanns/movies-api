@@ -1,12 +1,22 @@
 {
   "movie1": {
     "title": "Ghosted",
-    "director": "Dexter Fletcher",
+    "director": ["Dexter Fletcher"],
     "stars": ["Chris Evans", "Ana de Armas", "Adrien Brody"],
     "releaseDate": "April 21, 2023",
     "genre": "Action/Romance",
     "rating": "PG-13",
     "animated": false,
     "audienceScore": "56%"
+  },
+  "movie2": {
+    "title": "The Super Mario Bros. Movie",
+    "director": ["Aaron Horvath", "Michael Jelenic"],
+    "stars": ["Chris Pratt", "Anya Taylor-Joy", "Charlie Day", "Jack Black"],
+    "releaseDate": "April 5, 2023",
+    "genre": "Adventure/Fantasy",
+    "rating": "PG",
+    "animated": true,
+    "audienceScore": "96%"
   }
 }

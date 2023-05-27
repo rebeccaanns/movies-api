@@ -3,7 +3,7 @@ const swaggerAutogen = require('swagger-autogen')();
 const doc = {
   info: {
     title: 'Movies API',
-    description: 'Project 2 movies API for CSE341 at BYUI ',
+    description: 'Project 2 Movies API for CSE341 at BYUI ',
   },
   host: 'https://movies-api-oq8u.onrender.com',
   schemes: ['http', 'https'],
@@ -16,4 +16,6 @@ const endpointsFiles = ['./routes/app.js'];
    'endpointsFiles' only the root file where the route starts,
    such as index.js, app.js, routes.js, ... */
 
-swaggerAutogen(outputFile, endpointsFiles, doc);
+swaggerAutogen(outputFile, endpointsFiles, doc).then(() => {
+  require('./server')
+});

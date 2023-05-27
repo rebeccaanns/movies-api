@@ -2,19 +2,33 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const express = require('express');
-// const mongodb = require('./db/connect');
+const mongodb = require('./db/connect');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger-output.json');
+// const createError = require('http-errors');
+const cors = require('cors');
+// const {
+//   signupValidation,
+//   loginValidation
+// } = require('../movies-api/routes/validator');
 
 const app = express();
 const port = process.env.port || 3000;
 
 app
   .use(bodyParser.json())
+  // .use(bodyParser.urlencoded({extended: true}))
   .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
+    res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Z-Key');
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     next();
   })
+  .use(cors())
+  .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
   .use('/', require('./routes/app'));
 
 const db = require('./models');
@@ -32,6 +46,8 @@ db.mongoose
     console.log('Cannot connect to database', err);
     process.exit();
   });
+
+
 
 // mongodb.initDb((error, mongodb) => {
 //   if (error) {

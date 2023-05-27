@@ -6,7 +6,7 @@ module.exports = (mongoose) => {
         type: String
       },
       director: {
-        type: String
+        type: [String]
       },
       stars: {
         type: [

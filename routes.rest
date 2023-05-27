@@ -1,0 +1,50 @@
+//get all movies
+GET http://localhost:3000/movies
+
+###
+GET https://movies-api-oq8u.onrender.com/movies
+
+//Single movie
+###
+GET http://localhost:3000/movies/646cd27212bd8085f8c11f78
+
+###
+GET http://localhost:3000/movies/647131fd8e9a96486a93cab7
+
+//POST
+###
+POST http://localhost:3000/movies HTTP/1.1
+Content-Type: application/json
+{
+    "title": "Mamma Mia! Here We Go Again",
+    "director": ["Ol Parker"],
+    "stars": ["Lily James", "Amanda Seyfreid", "Meryl Streep"],
+    "releaseDate": "July 20, 2018",
+    "genre": "Musical/Comedy",
+    "rating": "PG-13",
+    "animated": false,
+    "audienceScore": "66%"
+}
+
+//PUT
+###
+# PUT http://localhost:3000/movies HTTP/1.1
+# Content-Type: application/json
+# {
+#     "title": "Mamma Mia! Here We Go Again",
+#     "director": ["Ol Parker"],
+#     "stars": ["Lily James", "Amanda Seyfreid", "Meryl Streep", "Cher"],
+#     "releaseDate": "July 20, 2018",
+#     "genre": "Musical/Comedy",
+#     "rating": "PG-13",
+#     "animated": false,
+#     "audienceScore": "77%"
+# }
+
+//get all ratings
+###
+GET http://localhost:3000/userRatings
+
+//Single rating
+###
+GET http://localhost:3000/userRatings/6472607f8e9a96486a93cab9
