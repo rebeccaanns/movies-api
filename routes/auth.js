@@ -1,7 +1,9 @@
-const router = require('express').Router();
+const express = require('express');
+const ratings = require('./userRating');
+const app = express.Router();
 
 //login with google
-router.get('/google', (req, res) => {
+app.get('/google', (req, res) => {
   //passport eventually
   res.send('logging in with Google')
 });
