@@ -16,6 +16,9 @@ module.exports = (mongoose) => {
       },
       password: {
         type: String
+      },
+      googleId: {
+        type: String
       }
     })
   );
