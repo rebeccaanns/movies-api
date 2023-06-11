@@ -25,12 +25,19 @@ const {
 // } = require('../movies-api/routes/validator');
 
 const router = require('./routes/app');
+const db = require('./models');
+const movies = require("./models/movies");
 
 const app = express();
 const port = process.env.port || 3000;
 
+// Require static assets from public folder
+app.use(express.static(path.join(__dirname, 'public')));
+// Set 'views' directory for any views being rendered res.render()
 app.set('views', path.join(__dirname, 'views'));
+app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'ejs');
+
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
@@ -68,8 +75,6 @@ app
   })
   .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
   .use('/', router);
-
-const db = require('./models');
 
 // db.mongoose
 //   .connect(db.url, {
